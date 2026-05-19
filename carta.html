@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Carta de Amor | Para ti ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fff0f3 0%, #ffe4e9 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            font-family: 'Quicksand', 'Segoe UI', 'Poppins', 'Georgia', cursive;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Elementos decorativos flotantes - corazones y rosas */
+        .floating-romance {
+            position: fixed;
+            pointer-events: none;
+            font-size: 1.8rem;
+            opacity: 0.4;
+            animation: flotarAmor 14s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes flotarAmor {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 0.5; }
+            100% { transform: translateY(-20vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Marco de la carta romántico */
+        .letter-container {
+            max-width: 780px;
+            width: 100%;
+            background: #fff9f7;
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 200, 210, 0.2) 1px, transparent 1px);
+            background-size: 20px 20px;
+            border-radius: 48px 32px 48px 32px;
+            box-shadow: 0 30px 50px rgba(200, 70, 90, 0.25), inset 0 0 0 3px #ffb8c4, inset 0 0 0 8px #ff8fa0;
+            padding: 2rem 2.2rem;
+            position: relative;
+            transition: all 0.4s ease;
+            animation: aparecerSuave 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            z-index: 20;
+        }
+
+        @keyframes aparecerSuave {
+            from { opacity: 0; transform: translateY(60px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .letter-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 55px rgba(200, 70, 90, 0.35);
+        }
+
+        /* Corazones decorativos */
+        .heart-deco {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.15;
+            bottom: 15px;
+            right: 20px;
+            animation: palpitarSuave 3s infinite;
+        }
+
+        .heart-deco-left {
+            left: 20px;
+            top: 15px;
+            transform: rotate(-10deg);
+        }
+
+        @keyframes palpitarSuave {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.1); opacity: 0.25; }
+        }
+
+        /* Título y texto romántico */
+        .fecha {
+            font-family: 'Quicksand', monospace;
+            text-align: center;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: #d46b7c;
+            border-bottom: 2px dashed #ffb0bb;
+            display: inline-block;
+            width: auto;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #c73e4d;
+            text-shadow: 2px 2px 0 #ffe0e5;
+            margin: 0.7rem 0 1rem 0;
+            font-family: 'Quicksand', 'Poppins', 'Georgia', cursive;
+            font-weight: 700;
+        }
+
+        .carta-texto {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #4a2a2a;
+            text-align: justify;
+            margin: 1.8rem 0;
+            background: rgba(255, 245, 245, 0.75);
+            padding: 1.3rem 1.8rem;
+            border-radius: 28px;
+            box-shadow: inset 0 0 0 1px #ffe0e4, 0 6px 18px rgba(180, 60, 80, 0.1);
+        }
+
+        .carta-texto p {
+            margin-bottom: 1rem;
+        }
+
+        .firma {
+            text-align: right;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 2px dotted #ffb0bb;
+            color: #d45c6e;
+            font-weight: 600;
+        }
+
+        /* Botón de regreso romántico */
+        .btn-volver {
+            background: linear-gradient(135deg, #e87484, #c73e4d);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 60px;
+            color: #fff5f7;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 25px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 5px 0 0 #8b2c38;
+            font-family: 'Quicksand', 'Poppins', sans-serif;
+            position: relative;
+            z-index: 30;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .btn-volver:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 0 #8b2c38;
+        }
+
+        .btn-volver:hover {
+            background: linear-gradient(135deg, #f08b9a, #da4e5f);
+            gap: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .corazon-flotante-grande {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            font-size: 2.2rem;
+            animation: palpitarFuerte 1.3s infinite;
+            filter: drop-shadow(0 0 6px #ff6b7c);
+            z-index: 99;
+            pointer-events: none;
+        }
+
+        @keyframes palpitarFuerte {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); text-shadow: 0 0 12px #ff4d6d; }
+        }
+
+        /* Rosa giratoria decorativa */
+        .rosa-deco {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: girarSuave 8s infinite linear;
+            pointer-events: none;
+            z-index: 99;
+        }
+
+        @keyframes girarSuave {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        audio {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .letter-container { padding: 1.5rem; }
+            .carta-texto { font-size: 1rem; padding: 1rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos flotantes románticos -->
+    <div id="romance-area"></div>
+    <div class="corazon-flotante-grande">❤️💖🌹</div>
+    <div class="rosa-deco">🌷🥀</div>
+
+    <div class="letter-container">
+        <div class="heart-deco heart-deco-left">💗</div>
+        <div class="heart-deco" style="bottom: 20px; right: 20px;">💕</div>
+        <div style="text-align: center;">
+            
+        </div>
+        <h2>💌 Para La Mejor Persona Que Conozco 💌</h2>
+        <div class="carta-texto">
+            <p>Desde que llegaste a mi vida, muchas cosas cambiaron para mi. Te convertiste en mi lugar seguro, en la persona que alegra mis días incluso cuando todo parece difícil. No importa cuanta distancia haya entre nosotros, porque mi corazón siempre encuentra la manera de sentirse cerca de ti.</p>
+            <p>A veces me pongo a pensar en lo bonito que será cuando podamos vernos por fin, quiero que los abrazos ya no sean imaginados y pueda tomar tu mano de verdad. Mientras ese momento llega, quiero seguir construyendo contigo recuerdos, risas y sueños.</p>
+            <p>Gracias por tu paciencia, por tu cariño y por nunca rendirte conmigo. No tienes idea de lo feliz que me hace saber que existes y que, de alguna manera, coincidimos.</p>
+            <p>Hoy solo quiero decirte que te amo muchísimo, que eres una parte muy importante de mi vida y que no importa la distancia, siempre voy a amarte y mejorar por ti.</p>
+            <div class="firma">— Con todo mi cariño, Hector. ❤️</div>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <a class="btn-volver" href="index.html" role="button">💕 Volver al comienzo 🌹</a>
+        </div>
+    </div>
+
+    <script>
+        // Generar elementos flotantes románticos
+        function crearElementosFlotantes() {
+            const elementos = ['❤️', '💖', '💗', '💕', '💓', '🌹', '🥀', '🌷', '⭐', '✨', '🌸'];
+            const area = document.getElementById('romance-area');
+            for (let i = 0; i < 50; i++) {
+                let elemento = document.createElement('div');
+                elemento.classList.add('floating-romance');
+                elemento.innerText = elementos[Math.floor(Math.random() * elementos.length)];
+                const size = Math.random() * 1.6 + 0.8 + 'rem';
+                elemento.style.fontSize = size;
+                elemento.style.left = Math.random() * 100 + '%';
+                elemento.style.animationDuration = 8 + Math.random() * 15 + 's';
+                elemento.style.animationDelay = Math.random() * 10 + 's';
+                elemento.style.opacity = Math.random() * 0.5 + 0.2;
+                area.appendChild(elemento);
+            }
+        }
+        crearElementosFlotantes();
+
+        // Música desde tu carpeta local
+        const musicaCarta = new Audio('cancion/Te Amo y Mas.mpeg');
+        musicaCarta.loop = true;
+        musicaCarta.volume = 0.45;
+        
+        function activarMusica() {
+            musicaCarta.play().catch(e => console.log("Error:", e));
+            document.body.removeEventListener('click', activarMusica);
+        }
+        document.body.addEventListener('click', activarMusica);
+        
+        setTimeout(() => {
+            musicaCarta.play().catch(e => {});
+        }, 500);
+    </script>
+</body>
+</html>
